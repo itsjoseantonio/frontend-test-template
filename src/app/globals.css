@@ -5,10 +5,11 @@
   --foreground: #171717;
   --light-grey: #eeeeee;
   --dark-grey: #585660;
+  --dark: #3b3b3b;
 }
 
 body {
-  color: var(--foreground);
+  color: var(--dark);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
