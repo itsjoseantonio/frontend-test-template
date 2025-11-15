@@ -1,4 +1,4 @@
-import GameCard from "@/components/GameCard";
+import ProductCard from "@/components/ProductCard";
 
 export default async function Home() {
   return (
@@ -30,12 +30,12 @@ export default async function Home() {
       <div>
         <div className="max-w-screen-xl mx-auto py-12">
           <div className="grid grid-cols-3 gap-16">
-            <GameCard />
-            <GameCard />
-            <GameCard />
-            <GameCard />
-            <GameCard />
-            <GameCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
         </div>
       </div>

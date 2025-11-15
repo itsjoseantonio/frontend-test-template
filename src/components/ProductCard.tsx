@@ -2,8 +2,9 @@
 
 import { Game } from "@/utils/endpoint";
 import Button from "./ui/Button";
+import Badge from "./ui/Badge";
 
-const GameCard = () => {
+const ProductCard = () => {
   return (
     <div className="border border-[#8F8F8F] rounded-xl p-4 flex flex-col gap-4">
       <div className="relative rounded-t-xl">
@@ -12,9 +13,7 @@ const GameCard = () => {
           alt="awd"
           className="rounded-t-xl w-full max-h-[240px]"
         />
-        <span className="absolute left-2 top-2 py-1 px-2 bg-[#F5F5F4] text-base/tight rounded-md">
-          New
-        </span>
+        <Badge className="absolute left-2 top-2">New</Badge>
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-[#737373]">GENRE</span>
@@ -30,4 +29,4 @@ const GameCard = () => {
   );
 };
 
-export default GameCard;
+export default ProductCard;
