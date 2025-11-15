@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import CartCard from "@/components/CartCard";
+import OrderSummary from "@/components/OrderSummary";
 
 const CartPage = () => {
   return (
@@ -24,17 +25,20 @@ const CartPage = () => {
           </Link>
         </div>
         <div>
-          <div className="py-6">
+          <div className="pt-6 pb-8">
             <h1 className="font-bold text-3xl mb-1">Your Cart</h1>
             <div>
               <p>3 items</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-16">
+          <div className="grid grid-cols-[1fr_minmax(0,520px)] gap-16">
             <div>
               <CartCard />
               <CartCard />
               <CartCard />
+            </div>
+            <div>
+              <OrderSummary />
             </div>
           </div>
         </div>

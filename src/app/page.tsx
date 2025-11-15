@@ -8,7 +8,7 @@ export default async function Home() {
           <div className="flex flex-col gap-6 py-9">
             <h1 className="font-bold text-3xl">Top Sellers</h1>
             <div className="flex justify-end">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-5">
                 <span className="font-bold border-r-1 text-lg/5 pr-4">
                   Genre
                 </span>
