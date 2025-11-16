@@ -24,7 +24,7 @@ const Button = ({
   return (
     <button
       className={clsx(
-        `border rounded-lg py-4 px-2 w-full cursor-pointer`,
+        `border rounded-lg py-3 px-2 w-full cursor-pointer`,
         buttonVariants[variant],
         className
       )}

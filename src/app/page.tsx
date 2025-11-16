@@ -26,7 +26,8 @@ export default async function Home({
   const genre = params?.genre ?? "";
   const queryParams = new URLSearchParams({ genre, page });
   const baseURL = `${config.apiURL}?${queryParams}`;
-  const { games, availableFilters, error } = await getGames(baseURL);
+  const { games, availableFilters, totalPages, currentPage, error } =
+    await getGames(baseURL);
 
   return (
     <main className="min-h-screen">
@@ -43,7 +44,11 @@ export default async function Home({
       <div>
         <div className="max-w-screen-xl mx-auto py-12">
           {error && <p className="text-center">{error}</p>}
-          <CatalogGames games={games} />
+          <CatalogGames
+            games={games}
+            totalPages={totalPages}
+            currentPage={currentPage}
+          />
         </div>
       </div>
     </main>
