@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
+// ===== Assets ===== //
 import Logo from "../../../public/images/ApplyDigital-Logo.png";
 
 const Footer = () => {

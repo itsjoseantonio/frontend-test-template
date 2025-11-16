@@ -1,7 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+
+// ===== Components ===== //
 import GameCard from "./GameCard";
+
 import { Game } from "@/utils/endpoint";
 
 interface CatalogGamesProps {

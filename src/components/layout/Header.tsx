@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
+// ===== Assets ===== //
 import CartIcon from "../../../public/icons/cart.svg";
 
 const Header = () => {

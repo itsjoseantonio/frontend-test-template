@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
-import Button from "./ui/Button";
+
+// ===== Components ===== //
+import Button from "../ui/Button";
 
 interface OrderSummary {
   cartItems: any[];

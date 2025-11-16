@@ -1,8 +1,11 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import CartCard from "@/components/CartCard";
-import OrderSummary from "@/components/OrderSummary";
+
+// ===== Components ===== //
+import CartCard from "@/components/cart/CartCard";
+import OrderSummary from "@/components/cart/OrderSummary";
+
+// ===== Assets ===== //
 import Back from "../../../public/icons/back-arrow.svg";
 
 const CartPage = () => {

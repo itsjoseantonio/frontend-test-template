@@ -1,6 +1,9 @@
 "use client";
-import FilterControls from "./FilterControls";
+
 import { useSearchParams, useRouter } from "next/navigation";
+
+// ===== Components ===== //
+import FilterControls from "./FilterControls";
 
 const FilterControlsClient = ({ filters }: { filters: string[] }) => {
   const params = useSearchParams();

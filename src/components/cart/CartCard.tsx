@@ -1,5 +1,6 @@
-import React from "react";
 import Image from "next/image";
+
+// ===== Assets ===== //
 import img from "../../public/game-images/ageofempiresII.jpeg";
 import close from "../../public/icons/close.svg";
 

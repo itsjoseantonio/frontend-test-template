@@ -1,8 +1,10 @@
 "use client";
 
-import { Game } from "@/utils/endpoint";
+// ===== Components ===== //
 import Button from "../ui/Button";
 import Badge from "../ui/Badge";
+
+import { Game } from "@/utils/endpoint";
 
 const GameCard = ({ name, image, genre, isNew, price }: Game) => {
   return (

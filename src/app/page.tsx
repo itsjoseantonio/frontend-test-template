@@ -1,5 +1,7 @@
 import fetchGames from "@/services/product.service";
 import { config } from "@/config/config";
+
+// ===== Components ===== //
 import CatalogGames from "@/components/catalog/CatalogGames";
 import FilterControlsClient from "@/components/catalog/FilterControlsClient";
 
