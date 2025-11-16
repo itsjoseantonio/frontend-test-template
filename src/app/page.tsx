@@ -1,6 +1,30 @@
-import ProductCard from "@/components/ProductCard";
+import fetchGames from "@/services/product.service";
+import { config } from "@/config/config";
+import CatalogGames from "@/components/CatalogGames";
 
-export default async function Home() {
+const getGames = async (url: string) => {
+  try {
+    const gameResponse = await fetchGames(url);
+    return gameResponse;
+  } catch (error) {
+    return {
+      error: "Fail load games",
+    };
+  }
+};
+
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | undefined }>;
+}) {
+  const params = await searchParams;
+  const page = params.page ?? "1";
+  const genre = params?.genre ?? "";
+  const queryParams = new URLSearchParams({ genre, page });
+  const baseURL = `${config.apiURL}?${queryParams}`;
+  const { games, availableFilters, error } = await getGames(baseURL);
+
   return (
     <main className="min-h-screen">
       <div className="border-b-1 border-[#EFEDF3]">
@@ -10,7 +34,7 @@ export default async function Home() {
             <div className="flex justify-end">
               <div className="flex items-center gap-5">
                 <span className="font-bold border-r-1 text-lg/5 pr-4">
-                  Genre
+                  Genr e
                 </span>
                 <select
                   name="genre"
@@ -29,14 +53,8 @@ export default async function Home() {
       </div>
       <div>
         <div className="max-w-screen-xl mx-auto py-12">
-          <div className="grid grid-cols-3 gap-16">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
+          {error && <p className="text-center">{error}</p>}
+          <CatalogGames games={games} />
         </div>
       </div>
     </main>
