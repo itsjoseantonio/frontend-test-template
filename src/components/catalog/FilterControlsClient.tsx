@@ -8,9 +8,10 @@ import FilterControls from "./FilterControls";
 const FilterControlsClient = ({ filters }: { filters: string[] }) => {
   const params = useSearchParams();
   const router = useRouter();
+  const currentParams = new URLSearchParams(params.toString());
+  const genre = currentParams.get("genre");
 
   const handleFilter = (value: string) => {
-    const currentParams = new URLSearchParams(params.toString());
     currentParams.set("genre", value);
     router.push(`?${currentParams}`);
   };
@@ -20,6 +21,7 @@ const FilterControlsClient = ({ filters }: { filters: string[] }) => {
       label="Genre"
       id="genre"
       name="genre"
+      defaultValue={genre || "All"}
       options={filters}
       handleChange={handleFilter}
     />

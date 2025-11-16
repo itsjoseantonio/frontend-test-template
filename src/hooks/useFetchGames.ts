@@ -13,7 +13,6 @@ const useFetchGames = (games: Game[], currentPage: number) => {
 
   const getMoreGames = async () => {
     const currentParams = new URLSearchParams(params.toString());
-    console.log(currentParams, "current");
     setLoading(true);
     try {
       const res = await fetchGames(

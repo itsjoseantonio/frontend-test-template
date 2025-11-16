@@ -2,6 +2,7 @@ interface FilterControlsProps {
   label: string;
   id: string;
   name: string;
+  defaultValue: string;
   options: string[];
   handleChange: (value: string) => void;
 }
@@ -10,6 +11,7 @@ const FilterControls = ({
   label,
   id,
   name,
+  defaultValue,
   options,
   handleChange,
 }: FilterControlsProps) => {
@@ -23,8 +25,9 @@ const FilterControls = ({
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           handleChange(e.target.value)
         }
+        defaultValue={defaultValue}
       >
-        <option value="">All</option>
+        <option value="all">All</option>
         {options.map((opt: string) => (
           <option key={opt} value={opt}>
             {opt}
