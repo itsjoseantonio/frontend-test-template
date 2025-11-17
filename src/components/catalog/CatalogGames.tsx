@@ -1,14 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import useCartStore from "@/store/cartStore";
 
 // ===== Components ===== //
 import GameCard from "./GameCard";
 import Button from "../ui/Button";
 
 import { Game } from "@/utils/endpoint";
-import fetchGames from "@/services/product.service";
-import { config } from "@/config/config";
 import useFetchGames from "@/hooks/useFetchGames";
 
 interface CatalogGamesProps {
@@ -21,6 +20,7 @@ const CatalogGames = ({
   currentPage,
   totalPages,
 }: CatalogGamesProps) => {
+  const addItem = useCartStore((state) => state.addItem);
   const { listGames, setListGames, getMoreGames } = useFetchGames(
     games,
     currentPage
@@ -34,7 +34,7 @@ const CatalogGames = ({
     <div>
       <div className="grid grid-cols-3 gap-16 mb-8">
         {listGames?.map((game) => (
-          <GameCard key={game.id} {...game} />
+          <GameCard key={game.id} {...game} addCart={() => addItem(game)} />
         ))}
       </div>
       {currentPage < totalPages && (

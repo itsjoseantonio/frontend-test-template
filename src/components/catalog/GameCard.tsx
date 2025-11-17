@@ -6,7 +6,18 @@ import Badge from "../ui/Badge";
 
 import { Game } from "@/utils/endpoint";
 
-const GameCard = ({ name, image, genre, isNew, price }: Game) => {
+interface GameCardProps extends Game {
+  addCart: () => void;
+}
+
+const GameCard = ({
+  name,
+  image,
+  genre,
+  isNew,
+  price,
+  addCart,
+}: GameCardProps) => {
   return (
     <div className="border border-[#8F8F8F] rounded-xl p-4 flex flex-col gap-4">
       <div className="relative rounded-t-xl">
@@ -23,7 +34,7 @@ const GameCard = ({ name, image, genre, isNew, price }: Game) => {
           <h3>{name}</h3>
           <p>{`$${price}`}</p>
         </div>
-        <Button onClick={() => console.log("raaaaa")} variant="outline">
+        <Button onClick={addCart} variant="outline">
           ADD TO CART
         </Button>
       </div>
