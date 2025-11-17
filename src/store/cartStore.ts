@@ -6,6 +6,7 @@ interface CartStoreProps {
   cart: Game[];
   addItem: (item: Game) => void;
   removeItem: (id: string) => void;
+  totalItems: () => number;
 }
 
 const useCartStore = create<CartStoreProps>()(
@@ -22,6 +23,7 @@ const useCartStore = create<CartStoreProps>()(
         const updatedItems = items.filter((item) => item.id != id);
         set((state) => ({ cart: updatedItems }));
       },
+      totalItems: () => get().cart.length,
     }),
     { name: "cart" }
   )
