@@ -16,12 +16,12 @@ const FilterControls = ({
   handleChange,
 }: FilterControlsProps) => {
   return (
-    <div className="flex items-center gap-5">
+    <div className="flex items-center gap-5 w-full md:w-auto">
       <span className="font-bold border-r-1 text-lg/5 pr-4">{label}</span>
       <select
         name={name}
         id={id}
-        className="w-[200px] block p-1 border border-gray-200 rounded-md  focus:outline-none"
+        className="w-full md:w-[200px] block p-1 border border-gray-200 rounded-md  focus:outline-none"
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
           handleChange(e.target.value)
         }

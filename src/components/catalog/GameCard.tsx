@@ -34,11 +34,15 @@ const GameCard = ({
       </div>
       <div className="flex flex-col gap-2">
         <span className="text-[#737373]">{genre}</span>
-        <div className="flex justify-between font-bold">
-          <h3>{name}</h3>
+        <div className="flex justify-between font-bold gap-2">
+          <h3 className="truncate">{name}</h3>
           <p>{`$${price}`}</p>
         </div>
-        <Button onClick={isAdded ? removeCart : addCart} variant="outline">
+        <Button
+          onClick={isAdded ? removeCart : addCart}
+          variant="outline"
+          className="font-bold"
+        >
           {isAdded ? "REMOVE" : "ADD TO CART"}
         </Button>
       </div>

@@ -31,18 +31,20 @@ export default async function Home({
 
   return (
     <main className="min-h-screen">
-      <div className="border-b-1 border-[#EFEDF3]">
+      <div className="border-b-1 border-[#EFEDF3] px-4">
         <div className="max-w-screen-xl mx-auto">
-          <div className="flex flex-col gap-6 py-9">
-            <h1 className="font-bold text-3xl">Top Sellers</h1>
-            <div className="flex justify-end">
+          <div className="flex flex-col gap-8 md:gap-12 py-8 md:py-12">
+            <h1 className="font-bold text-2xl md:text-4xl uppercase md:capitalize">
+              Top Sellers
+            </h1>
+            <div className="flex md:justify-end">
               <FilterControlsClient filters={availableFilters} />
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <div className="max-w-screen-xl mx-auto py-12">
+      <div className="px-4">
+        <div className="max-w-screen-xl mx-auto py-8 md:py-12">
           {error && <p className="text-center">{error}</p>}
           <CatalogGames
             games={games}

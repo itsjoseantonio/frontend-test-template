@@ -34,7 +34,7 @@ const CatalogGames = ({
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-16 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-16 mb-8 md:mb-12">
         {listGames?.map((game) => {
           const isAdded = cart.some((item) => item.id == game.id);
 

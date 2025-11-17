@@ -10,9 +10,9 @@ import CartIcon from "../../../public/icons/cart.svg";
 const Header = () => {
   const totalItems = useCartStore((state) => state.totalItems());
   return (
-    <header className="bg-[var(--light-grey)] py-5 px-3">
+    <header className="bg-[var(--light-grey)] p-4">
       <div className="flex items-center justify-between max-w-screen-xl mx-auto">
-        <Link href="/" className="text-[#585660] text-2xl leading-1">
+        <Link href="/" className="text-[#585660] text-lg md:text-2xl">
           GamerShop
         </Link>
         <Link href="/cart" className="relative">
