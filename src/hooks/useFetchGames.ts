@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+
 import fetchGames from "@/services/product.service";
 import { config } from "@/config/config";
 import { Game } from "@/utils/endpoint";
-import { useSearchParams } from "next/navigation";
 
 const baseUrl = `${config.apiURL}`;
 

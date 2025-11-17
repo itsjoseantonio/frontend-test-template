@@ -17,7 +17,7 @@ const CartCard = ({
   removeCart,
 }: CartCardProps) => {
   return (
-    <div className="flex gap-5 relative px-3 py-4">
+    <div className="flex gap-5 relative px-3 py-4 border-b-1 border-[#8F8F8F] last:border-none">
       <button
         className="absolute top-2 right-4 p-2 cursor-pointer"
         onClick={removeCart}

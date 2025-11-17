@@ -10,6 +10,14 @@ const CartClient = () => {
   const removeItem = useCartStore((state) => state.removeItem);
   const totalItems = useCartStore((state) => state.totalItems());
 
+  if (cart.length === 0) {
+    return (
+      <div className="py-16 text-center text-xl font-bold">
+        <p>There are no products in your Cart</p>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="pt-6 pb-8">
@@ -18,7 +26,7 @@ const CartClient = () => {
           <p>{totalItems} items</p>
         </div>
       </div>
-      <div className="grid grid-cols-[auto_auto] gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-16">
         <div>
           {cart.map((item) => (
             <CartCard
@@ -28,7 +36,7 @@ const CartClient = () => {
             />
           ))}
         </div>
-        <div>
+        <div className="min-w-[520px]">
           <OrderSummary cartItems={cart} totalItems={totalItems} />
         </div>
       </div>
