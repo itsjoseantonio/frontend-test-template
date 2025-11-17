@@ -8,6 +8,8 @@ import { Game } from "@/utils/endpoint";
 
 interface GameCardProps extends Game {
   addCart: () => void;
+  isAdded: boolean;
+  removeCart: () => void;
 }
 
 const GameCard = ({
@@ -17,6 +19,8 @@ const GameCard = ({
   isNew,
   price,
   addCart,
+  isAdded,
+  removeCart,
 }: GameCardProps) => {
   return (
     <div className="border border-[#8F8F8F] rounded-xl p-4 flex flex-col gap-4">
@@ -34,8 +38,8 @@ const GameCard = ({
           <h3>{name}</h3>
           <p>{`$${price}`}</p>
         </div>
-        <Button onClick={addCart} variant="outline">
-          ADD TO CART
+        <Button onClick={isAdded ? removeCart : addCart} variant="outline">
+          {isAdded ? "REMOVE" : "ADD TO CART"}
         </Button>
       </div>
     </div>

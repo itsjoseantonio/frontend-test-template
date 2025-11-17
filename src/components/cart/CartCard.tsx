@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Game } from "@/utils/endpoint";
 
 // ===== Assets ===== //
-import img from "../../../public/game-images/ageofempiresII.jpeg";
 import close from "../../../public/icons/close.svg";
 
 interface CartCardProps extends Game {
