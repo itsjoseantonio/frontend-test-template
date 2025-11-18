@@ -6,6 +6,7 @@ interface ButtonProps {
   variant?: Variant;
   children: ReactNode;
   className?: string;
+  testId?: string;
 }
 
 const buttonVariants = {
@@ -20,6 +21,7 @@ const Button = ({
   onClick,
   variant = "default",
   className,
+  testId,
 }: ButtonProps) => {
   return (
     <button
@@ -29,6 +31,7 @@ const Button = ({
         className
       )}
       onClick={onClick}
+      data-testid={testId}
     >
       {children}
     </button>

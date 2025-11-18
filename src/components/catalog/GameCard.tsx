@@ -27,7 +27,7 @@ const GameCard = ({
       <div className="relative rounded-t-xl">
         <img
           src={image}
-          alt="awd"
+          alt={name}
           className="rounded-t-xl w-full max-h-[240px]"
         />
         {isNew && <Badge className="absolute left-2 top-2">New</Badge>}
