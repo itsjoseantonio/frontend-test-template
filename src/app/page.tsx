@@ -9,7 +9,7 @@ const getGames = async (url: string) => {
   try {
     const gameResponse = await fetchGames(url);
     return gameResponse;
-  } catch (error) {
+  } catch (err) {
     return {
       error: "Fail load games",
     };
@@ -26,8 +26,9 @@ export default async function Home({
   const genre = params?.genre ?? "";
   const queryParams = new URLSearchParams({ genre, page });
   const baseURL = `${config.apiURL}?${queryParams}`;
-  const { games, availableFilters, totalPages, currentPage, error } =
-    await getGames(baseURL);
+  const { games, availableFilters, totalPages, currentPage } = await fetchGames(
+    baseURL
+  );
 
   return (
     <main className="min-h-screen">
@@ -45,7 +46,6 @@ export default async function Home({
       </div>
       <div className="px-4">
         <div className="max-w-screen-xl mx-auto py-8 md:py-12">
-          {error && <p className="text-center">{error}</p>}
           <CatalogGamesClient
             games={games}
             totalPages={totalPages}
