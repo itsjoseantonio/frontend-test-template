@@ -45,7 +45,7 @@ describe("useFetchGames Hook", () => {
 
   it("Initialize with initial states", () => {
     const { result } = renderHook(() =>
-      useFetchGames(initialGames as any, currentPage)
+      useFetchGames(initialGames, currentPage)
     );
 
     expect(result.current.loading).toBe(false);
