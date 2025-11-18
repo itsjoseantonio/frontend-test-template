@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { renderHook, act } from "@testing-library/react";
 import axios from "axios";
 import useFetchGames from "./useFetchGames";
+import { Game } from "@/utils/endpoint";
 
 vi.mock("axios");
 
@@ -11,8 +12,30 @@ vi.mock("next/navigation", () => {
   };
 });
 
-const initialGames = [{ id: "1", name: "Cyberpunk 2077" }];
-const newGames = [{ id: "2", name: "The Witcher 3: Wild Hunt" }];
+const initialGames: Game[] = [
+  {
+    id: "1",
+    name: "Cyberpunk 2077",
+    price: 99,
+    image:
+      "https://fastly.picsum.photos/id/659/200/300.jpg?hmac=cmMJe403Rt0WMoriAFlgDaHI4FkwevCOXFyhnelzolY",
+    isNew: false,
+    description: "Description game",
+    genre: "Action",
+  },
+];
+const newGames: Game[] = [
+  {
+    id: "2",
+    name: "The Witcher 3: Wild Hunt",
+    price: 99,
+    image:
+      "https://fastly.picsum.photos/id/659/200/300.jpg?hmac=cmMJe403Rt0WMoriAFlgDaHI4FkwevCOXFyhnelzolY",
+    isNew: false,
+    description: "Description game",
+    genre: "Action",
+  },
+];
 const currentPage = 1;
 
 describe("useFetchGames Hook", () => {
@@ -31,7 +54,7 @@ describe("useFetchGames Hook", () => {
 
   it("fetch more games data", async () => {
     const { result } = renderHook(() =>
-      useFetchGames(initialGames as any, currentPage)
+      useFetchGames(initialGames, currentPage)
     );
 
     vi.mocked(axios.get).mockResolvedValue({

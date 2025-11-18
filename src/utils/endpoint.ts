@@ -8,6 +8,13 @@ export interface Game {
   isNew: boolean;
 }
 
+export interface GamesResponse {
+  games: Game[];
+  availableFilters: string[];
+  totalPages: number;
+  currentPage: number;
+}
+
 // Mock games data
 export const allGames: Game[] = [
   {
