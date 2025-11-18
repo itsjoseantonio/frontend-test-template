@@ -20,13 +20,13 @@ const CartClient = () => {
 
   return (
     <>
-      <div className="pt-6 pb-8">
-        <h1 className="font-bold text-3xl mb-1">Your Cart</h1>
+      <div className="py-6 md:py-12">
+        <h1 className="font-bold text-2xl md:text-4xl mb-1">Your Cart</h1>
         <div>
-          <p>{totalItems} items</p>
+          <p className="text-x md:text-2xl">{totalItems} items</p>
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-16 pb-12">
         <div>
           {cart.map((item) => (
             <CartCard
@@ -36,7 +36,7 @@ const CartClient = () => {
             />
           ))}
         </div>
-        <div className="min-w-[520px]">
+        <div className="min-w-auto md:min-w-[520px]">
           <OrderSummary cartItems={cart} totalItems={totalItems} />
         </div>
       </div>
