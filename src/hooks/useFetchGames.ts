@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-import fetchGames from "@/services/product.service";
+import fetchGames from "@/services/gameServices";
 import { config } from "@/config/config";
 import { Game } from "@/utils/endpoint";
 

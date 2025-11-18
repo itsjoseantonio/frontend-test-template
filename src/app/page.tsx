@@ -1,8 +1,8 @@
-import fetchGames from "@/services/product.service";
+import fetchGames from "@/services/gameServices";
 import { config } from "@/config/config";
 
 // ===== Components ===== //
-import CatalogGames from "@/components/catalog/CatalogGames";
+import CatalogGamesClient from "@/components/catalog/CatalogGamesClient";
 import FilterControlsClient from "@/components/catalog/FilterControlsClient";
 
 const getGames = async (url: string) => {
@@ -46,7 +46,7 @@ export default async function Home({
       <div className="px-4">
         <div className="max-w-screen-xl mx-auto py-8 md:py-12">
           {error && <p className="text-center">{error}</p>}
-          <CatalogGames
+          <CatalogGamesClient
             games={games}
             totalPages={totalPages}
             currentPage={currentPage}

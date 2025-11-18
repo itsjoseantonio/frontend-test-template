@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import axios from "axios";
-import fetchGames from "./product.service";
+import fetchGames from "./gameServices";
 
 vi.mock("axios");
 

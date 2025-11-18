@@ -10,16 +10,16 @@ import Button from "../ui/Button";
 import { Game } from "@/utils/endpoint";
 import useFetchGames from "@/hooks/useFetchGames";
 
-interface CatalogGamesProps {
+interface CatalogGamesClientProps {
   games: Game[];
   currentPage: number;
   totalPages: number;
 }
-const CatalogGames = ({
+const CatalogGamesClient = ({
   games,
   currentPage,
   totalPages,
-}: CatalogGamesProps) => {
+}: CatalogGamesClientProps) => {
   const addItem = useCartStore((state) => state.addItem);
   const removeItem = useCartStore((state) => state.removeItem);
   const cart = useCartStore((state) => state.cart);
@@ -58,4 +58,4 @@ const CatalogGames = ({
   );
 };
 
-export default CatalogGames;
+export default CatalogGamesClient;
